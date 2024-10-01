@@ -1,52 +1,26 @@
-package module6;
+package inheritance;
 
-public class Student {
+public class Student extends person{
+	protected int rollNo;
+	protected String stream;
+	protected double score;
 	
-	private int rollNo;
-	private String name;
-	private double score;
-	
-	public Student() {
-//	System.out.println(" this is default constructor");
-		rollNo=0;
-		name="";
-		score=0.0;
-	
-	}
-	public Student(int rollNo, String name, double score) {
-		super();
+	public Student(String name, int age, char gender, int rollNo, String stream, double score) {
+		super(name, age, gender);//calling constructor of the person class
 		this.rollNo = rollNo;
-		this.name = name;
+		this.stream = stream;
 		this.score = score;
 	}
-	
-	public int getRollNo() {
-		return rollNo;
+	public void display()//fun overriding
+	{
+		super.display();//calling the method of person
+		super.fun1();
+		System.out.println();
 	}
-	public void setRollNo(int rollNo) {
-		this.rollNo = rollNo;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public double getScore() {
-		return score;
-	}
-	public void setScore(double score) {
-		this.score = score;
-	}
-//	public void display() {
-//		System.out.println("rollNo is "+rollNo);
-//		System.out.println("name is "+name);
-//		System.out.println("score is "+score);
-//	}
-	
-	public void markAttendance() {
-		System.out.println("Attendace is fair");
-		
+	@Override
+	public String toString() {
+		return "Student [rollNo=" + rollNo + ", stream=" + stream + ", score=" + score + ", name=" + name + ", age="
+				+ age + ", gender=" + gender + "]";
 	}
 	
 
